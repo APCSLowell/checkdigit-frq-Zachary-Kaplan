@@ -9,7 +9,7 @@ public class CheckDigit
    {  
      /* to be implemented in part (a) */
      int sum = 0;
-     int numDigits = String.valueOf(number).length();
+     int numDigits = String.valueOf(num).length();
      int mag = 1;
      for(int i = 1; i < numDigits; i++)
        {

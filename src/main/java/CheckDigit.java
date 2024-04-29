@@ -8,6 +8,23 @@ public class CheckDigit
    public static int getCheck(int num) 
    {  
      /* to be implemented in part (a) */
+     int sum = 0;
+     int numDigits = String.valueOf(number).length();
+     int mag = 1;
+     for(int i = 1; i < numDigits; i++)
+       {
+         mag*=10;
+       }
+     int j = 7;
+     while(mag >=1)
+       {
+         sum+= j*(num/mag);
+         j--;
+         num= num%mag;
+         mag/=10;
+       }
+     sum = sum%10;
+     return sum;
    }
  
   /** Returns true if numWithCheckDigit is valid, or false    
@@ -18,7 +35,11 @@ public class CheckDigit
    */     
    public static boolean isValid(int numWithCheckDigit)    
    {      
-     /* to be implemented in part (b) */    
+     /* to be implemented in part (b) */
+     int wawa = numWithCheckDigit/10;
+     int checked = getCheck(wawa);
+     int checker = numWithCheckDigit%10;
+     return checked == checker;
    }    
    
    /** Returns the number of digits in num. */    
